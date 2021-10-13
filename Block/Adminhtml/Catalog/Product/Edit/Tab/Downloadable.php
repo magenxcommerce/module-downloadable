@@ -15,8 +15,6 @@ use Magento\Framework\Registry;
  * Adminhtml catalog product downloadable items tab and form
  *
  * @author      Magento Core Team <core@magentocommerce.com>
- * @deprecated 100.3.1
- * @see \Magento\Downloadable\Ui\DataProvider\Product\Form\Modifier\Composite
  */
 class Downloadable extends Widget implements TabInterface
 {
@@ -136,8 +134,6 @@ class Downloadable extends Widget implements TabInterface
     }
 
     /**
-     * Get group code
-     *
      * @return string
      */
     public function getGroupCode()
@@ -156,8 +152,6 @@ class Downloadable extends Widget implements TabInterface
     }
 
     /**
-     * Is downloadable
-     *
      * @return bool
      */
     public function isDownloadable()
@@ -166,7 +160,7 @@ class Downloadable extends Widget implements TabInterface
     }
 
     /**
-     * @inheritdoc
+     * @return $this
      */
     protected function _prepareLayout()
     {

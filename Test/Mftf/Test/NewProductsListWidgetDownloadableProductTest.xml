@@ -18,14 +18,10 @@
             <testCaseId value="MC-124"/>
             <group value="Downloadable"/>
             <group value="WYSIWYGDisabled"/>
+            <skip>
+                <issueId value="MQE-1187"/>
+            </skip>
         </annotations>
-
-        <before>
-            <magentoCLI stepKey="addDownloadableDomain" command="downloadable:domains:add static.magento.com" before="loginAsAdmin"/>
-        </before>
-        <after>
-            <magentoCLI stepKey="removeDownloadableDomain" command="downloadable:domains:remove static.magento.com" before="logout"/>
-        </after>
 
         <!-- A Cms page containing the New Products Widget gets created here via extends -->
 
@@ -46,7 +42,7 @@
         <fillField userInput="This Is A Title" selector="{{AdminProductDownloadableSection.linksTitleInput}}" stepKey="fillDownloadableLinkTitle"/>
         <checkOption selector="{{AdminProductDownloadableSection.isLinksPurchasedSeparately}}" stepKey="checkLinksPurchasedSeparately"/>
         <fillField userInput="This Is Another Title" selector="{{AdminProductDownloadableSection.samplesTitleInput}}" stepKey="fillDownloadableSampleTitle"/>
-        <actionGroup ref="AddDownloadableProductLinkWithMaxDownloadsActionGroup" stepKey="addDownloadableLinkWithMaxDownloads">
+        <actionGroup ref="addDownloadableProductLinkWithMaxDownloads" stepKey="addDownloadableLinkWithMaxDownloads">
             <argument name="link" value="downloadableLinkWithMaxDownloads"/>
         </actionGroup>
         <click selector="{{AdminProductFormActionSection.saveButton}}" stepKey="clickSaveProduct"/>

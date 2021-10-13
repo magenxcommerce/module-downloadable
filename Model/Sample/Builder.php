@@ -3,7 +3,6 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-
 namespace Magento\Downloadable\Model\Sample;
 
 use Magento\Downloadable\Api\Data\SampleInterface;
@@ -15,8 +14,7 @@ use Magento\Framework\Api\DataObjectHelper;
 use Magento\Framework\DataObject\Copy;
 
 /**
- * Builder download sample link model for downloadable product
- *
+ * Class Builder
  * @api
  * @since 100.1.0
  */
@@ -26,7 +24,7 @@ class Builder
      * @var Sample
      */
     private $component;
-
+    
     /**
      * @var File
      */
@@ -73,10 +71,8 @@ class Builder
     }
 
     /**
-     * Init data for builder
-     *
      * @param array $data
-     * @return $this
+     * @return $this;
      * @since 100.1.0
      * @since 100.1.0
      */
@@ -87,8 +83,6 @@ class Builder
     }
 
     /**
-     * Build sample link
-     *
      * @param SampleInterface $sample
      * @return SampleInterface
      * @throws \Magento\Framework\Exception\LocalizedException
@@ -123,20 +117,12 @@ class Builder
         if (!$sample->getSortOrder()) {
             $sample->setSortOrder(1);
         }
-
-        $useDefaultTitle = $this->data['use_default_title'] ?? false;
-
-        if ($useDefaultTitle) {
-            $sample->setTitle(null);
-        }
         $this->resetData();
 
         return $sample;
     }
 
     /**
-     * Reset data
-     *
      * @return void
      */
     private function resetData()
@@ -145,8 +131,6 @@ class Builder
     }
 
     /**
-     * Get component
-     *
      * @return Sample
      */
     private function getComponent()
